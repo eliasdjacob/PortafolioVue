@@ -2,9 +2,7 @@
 
 </script>
 
-
 <template>
-
 <div class="background">
   <div class="container">
     <div class="screen">
@@ -43,8 +41,8 @@
               <input class="app-form-control" placeholder="MESSAGE">
             </div>
             <div class="app-form-group buttons">
-              <button class="app-form-button">CANCEL</button>
-              <button class="app-form-button">SEND</button>
+              <button class="app-form-button cancel">CANCEL</button>
+              <button class="app-form-button send">SEND</button>
             </div>
           </div>
         </div>
@@ -52,9 +50,7 @@
     </div>
   </div>
 </div>
-
 </template>
-
 
 <style scoped>
 *, *:before, *:after {
@@ -168,7 +164,7 @@ body, button, input {
   display: flex;
   flex-direction: column;
   position: relative;
-  color: rgb(8, 142, 126);
+  color: #d5006d; /* Matching dark pink color */
   font-size: 26px;
 }
 
@@ -180,7 +176,7 @@ body, button, input {
   bottom: -10px;
   width: 25px;
   height: 4px;
-  background: rgb(8, 142, 126);
+  background: #d5006d; /* Matching dark pink color */
 }
 
 .app-contact {
@@ -226,14 +222,32 @@ body, button, input {
 .app-form-button {
   background: none;
   border: none;
-  color: rgb(8, 142, 126);
+  color: #ffffff; /* White text */
   font-size: 14px;
   cursor: pointer;
   outline: none;
 }
 
+.app-form-button.cancel {
+  background-color: #d5006d; /* Dark pink color for Cancel button */
+}
+
+.app-form-button.cancel:hover {
+  background-color: #d5006d; /* Keep the same background color on hover */
+  color: #ffffff; /* Keep the font color the same on hover */
+}
+
+.app-form-button.send {
+  background-color: #d5006d; /* Dark pink color for Send button */
+}
+
+.app-form-button.send:hover {
+  background-color: #d5006d; /* Keep the same background color on hover */
+  color: #ffffff; /* Keep the font color the same on hover */
+}
+
 .app-form-button:hover {
-  color: #b9134f;
+  color: #b9134f; /* Keep other buttons' color change on hover */
 }
 
 .credits {
@@ -292,5 +306,4 @@ body, button, input {
     padding: 0;
   }
 }
-
 </style>

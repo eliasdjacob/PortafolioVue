@@ -1,26 +1,21 @@
 <script setup></script>
 
 <template>
-
-    <button class="card">
-  <div class="row clearfix">
-    <div class="left big" id="utn">UTN</div>
-  </div>
-  <div class="row">
-    <p><span class="big">E</span>lias <span class="big">Jacob</span></p>
-    <p><span class="big">W</span>eb <span class="big">D</span>eveloper</p>
-  </div>
-  <div class="row">
-    <p><span class="med">eliasdavidjacob@gmail.com</span></p>  
-  </div>
-</button>
-
+  <button class="card">
+    <div class="row clearfix">
+      <div class="left big" id="utn">UTN</div>
+    </div>
+    <div class="row">
+      <p><span class="big">E</span>lias <span class="big">Jacob</span></p>
+      <p><span class="big">W</span>eb <span class="big">D</span>eveloper</p>
+    </div>
+    <div class="row">
+      <p><span class="med">eliasdavidjacob@gmail.com</span></p>  
+    </div>
+  </button>
 </template>
 
 <style scoped>
-
-
-
 @import url(https://fonts.googleapis.com/css?family=Cormorant+Garamond);
 
 *,
@@ -60,13 +55,14 @@ button {
   z-index: 10;
 }
 
-p{
-    color: rgb(8, 142, 126)
+p {
+    color: #d5006d; /* Dark pink color */
 }
 
 #utn {
-    color:rgb(8, 142, 126) ;
+    color: #d5006d; /* Dark pink color */
 }
+
 .clearfix::after {
     content: "";
     clear: both;

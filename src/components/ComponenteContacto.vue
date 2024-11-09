@@ -3,53 +3,21 @@
 </script>
 
 <template>
-<div class="background">
-  <div class="container">
-    <div class="screen">
-      <div class="screen-header">
-        <div class="screen-header-left">
-          <div class="screen-header-button close"></div>
-          <div class="screen-header-button maximize"></div>
-          <div class="screen-header-button minimize"></div>
-        </div>
-        <div class="screen-header-right">
-          <div class="screen-header-ellipsis"></div>
-          <div class="screen-header-ellipsis"></div>
-          <div class="screen-header-ellipsis"></div>
-        </div>
-      </div>
-      <div class="screen-body">
-        <div class="screen-body-item left">
-          <div class="app-title">
-            <span>CONTACT</span>
-            <span>ME</span>
-          </div>
-          <div class="app-contact">CONTACT INFO : eliasdavidjacob@gmail.com</div>
-        </div>
-        <div class="screen-body-item">
-          <div class="app-form">
-            <div class="app-form-group">
-              <input class="app-form-control" placeholder="NAME">
-            </div>
-            <div class="app-form-group">
-              <input class="app-form-control" placeholder="EMAIL">
-            </div>
-            <div class="app-form-group">
-              <input class="app-form-control" placeholder="CONTACT N°">
-            </div>
-            <div class="app-form-group message">
-              <input class="app-form-control" placeholder="MESSAGE">
-            </div>
-            <div class="app-form-group buttons">
-              <button class="app-form-button cancel">CANCEL</button>
-              <button class="app-form-button send">SEND</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="wrapper">
+    <form class="form">
+      <div class="pageTitle title">Contacto</div>
+      <div class="secondaryTitle title">Completá el formulario para contactarte.</div>
+      <input type="text" class="name formEntry" placeholder="Nombre" />
+      <input type="text" class="email formEntry" placeholder="Email" />
+      <textarea class="message formEntry" placeholder="Mensaje"></textarea>
+      <input type="checkbox" class="termsConditions" value="Term" />
+      <label style="color: grey" for="terms">
+        Acepto los <span style="color: #0e3721">términos</span> & <span style="color: #0e3721">condiciones</span>.
+      </label>
+      <br />
+      <button type="submit" class="submit formEntry">Enviar</button>
+    </form>
   </div>
-</div>
 </template>
 
 <style scoped>
@@ -62,10 +30,11 @@
 body {
   background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
   font-size: 12px;
+  font-family: 'Brush Script MT', cursive;
 }
 
 body, button, input {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Brush Script MT', cursive;
   font-weight: 700;
   letter-spacing: 1.4px;
 }
@@ -164,8 +133,9 @@ body, button, input {
   display: flex;
   flex-direction: column;
   position: relative;
-  color: #d5006d; /* Matching dark pink color */
+  color: #d5006d;
   font-size: 26px;
+  font-family: 'Brush Script MT', cursive;
 }
 
 .app-title:after {
@@ -176,13 +146,14 @@ body, button, input {
   bottom: -10px;
   width: 25px;
   height: 4px;
-  background: #d5006d; /* Matching dark pink color */
+  background: #d5006d;
 }
 
 .app-contact {
   margin-top: auto;
   font-size: 12px;
   color: #888;
+  font-family: 'Brush Script MT', cursive;
 }
 
 .app-form-group {
@@ -209,6 +180,7 @@ body, button, input {
   text-transform: uppercase;
   outline: none;
   transition: border-color .2s;
+  font-family: 'Brush Script MT', cursive;
 }
 
 .app-form-control::placeholder {
@@ -222,14 +194,15 @@ body, button, input {
 .app-form-button {
   background: none;
   border: none;
-  color: #ffffff; /* White text */
+  color: #ffffff;
   font-size: 14px;
   cursor: pointer;
   outline: none;
+  font-family: 'Brush Script MT', cursive;
 }
 
 .app-form-button.cancel {
-  background-color: #d5006d; /* Dark pink color for Cancel button */
+  background-color: #d5006d;
 }
 
 .app-form-button.cancel:hover {
@@ -256,7 +229,7 @@ body, button, input {
   align-items: center;
   margin-top: 20px;
   color: #ffa4bd;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Brush Script MT', cursive;
   font-size: 16px;
   font-weight: normal;
 }
@@ -267,6 +240,7 @@ body, button, input {
   color: #fff;
   font-weight: bold;
   text-decoration: none;
+  font-family: 'Brush Script MT', cursive;
 }
 
 .dribbble {
@@ -304,6 +278,130 @@ body, button, input {
 
   .screen-body-item {
     padding: 0;
+  }
+}
+
+body {
+  background-color: #d1f3e7;
+}
+
+.form {
+  background: #fff;
+  box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+  border-radius: 5px;
+  max-width: 480px;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  border-top: 5px solid #0e3721;
+  animation: bounce 1.5s infinite;
+  font-family: 'Brush Script MT', cursive;
+}
+
+::-webkit-input-placeholder {
+  font-size: 1.3em;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.title {
+  display: block;
+  font-family: 'Brush Script MT', cursive;
+  margin: 10px auto 5px;
+  width: 300px;
+}
+
+.termsConditions {
+  margin: 0 auto 5px 80px;
+}
+
+.pageTitle {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.secondaryTitle {
+  color: grey;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.name {
+  background-color: #ebebeb;
+  color: white;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.name:hover {
+  border-bottom: 5px solid #0e3721;
+  height: 30px;
+  width: 380px;
+  transition: ease 0.5s;
+}
+
+.email {
+  background-color: #ebebeb;
+  height: 2em;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.email:hover {
+  border-bottom: 5px solid #0e3721;
+  height: 30px;
+  width: 380px;
+  transition: ease 0.5s;
+}
+
+.message {
+  background-color: #ebebeb;
+  overflow: hidden;
+  height: 10rem;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.message:hover {
+  border-bottom: 5px solid #0e3721;
+  height: 12em;
+  width: 380px;
+  transition: ease 0.5s;
+}
+
+.formEntry {
+  display: block;
+  margin: 30px auto;
+  min-width: 300px;
+  padding: 10px;
+  border-radius: 2px;
+  border: none;
+  transition: all 0.5s ease 0s;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.submit {
+  width: 200px;
+  color: white;
+  background-color: #0e3721;
+  font-size: 20px;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.submit:hover {
+  box-shadow: 15px 15px 15px 5px rgba(78, 72, 77, 0.219);
+  transform: translateY(-3px);
+  width: 300px;
+  border-top: 5px solid #0e3750;
+  border-radius: 0%;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(10px);
   }
 }
 </style>

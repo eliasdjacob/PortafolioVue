@@ -12,7 +12,7 @@
 </template>
 
 <style scoped>
-body,html {
+body, html {
   margin: 0;
   font: bold 14px/1.4 'Open Sans', arial, sans-serif;
   background: #000;
@@ -45,6 +45,7 @@ a {
   padding: 15px 20px;
   position: relative;
   border-radius: 5px;
+  white-space: nowrap; /* Prevent "Sobre mi" from breaking into two lines */
 }
 
 a:after {    
@@ -70,8 +71,8 @@ a:hover {
 }
 
 @media screen and (max-height: 300px) {
-	ul {
-		margin-top: 40px;
-	}
+  ul {
+    margin-top: 40px;
+  }
 }
 </style>

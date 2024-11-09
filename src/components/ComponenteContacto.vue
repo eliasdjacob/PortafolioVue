@@ -233,21 +233,21 @@ body, button, input {
 }
 
 .app-form-button.cancel:hover {
-  background-color: #d5006d; /* Keep the same background color on hover */
-  color: #ffffff; /* Keep the font color the same on hover */
+  background-color: #d5006d; 
+  color: #ffffff; 
 }
 
 .app-form-button.send {
-  background-color: #d5006d; /* Dark pink color for Send button */
+  background-color: #d5006d; 
 }
 
 .app-form-button.send:hover {
-  background-color: #d5006d; /* Keep the same background color on hover */
-  color: #ffffff; /* Keep the font color the same on hover */
+  background-color: #d5006d; 
+  color: #ffffff; 
 }
 
 .app-form-button:hover {
-  color: #b9134f; /* Keep other buttons' color change on hover */
+  color: #b9134f; 
 }
 
 .credits {

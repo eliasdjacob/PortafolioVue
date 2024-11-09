@@ -6,6 +6,7 @@
   /* padding: 2rem; */
   margin-top: 10px;
   font-weight: normal;
+  cursor: url('./src/components/icons/wand.cur') 16 16, auto;
 }
 
 a {

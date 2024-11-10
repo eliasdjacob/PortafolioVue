@@ -2,7 +2,7 @@
   <div class="container">
     <div class="card" @click="toggleCard">
       <figure class="front">
-        <img src="http://www.jboeijenga.nl/img/front.jpg" alt="front" />
+        <img :src="frontImage" alt="front" />
         <div class="caption">
           <h2>
             elias <span>jacob</span>
@@ -13,7 +13,7 @@
       </figure>
 
       <figure class="back">
-        <img src="http://www.jboeijenga.nl/img/back.jpg" alt="back" />
+        <img :src="backImage" alt="back" />
         <div class="caption">
           <dl>
             <dt>GITHUB</dt>
@@ -31,6 +31,8 @@
 
 <script setup>
 import { ref } from "vue";
+import frontImage from '@/components/icons/front.jpg';
+import backImage from '@/components/icons/back.jpg';
 
 const isFlipped = ref(false);
 

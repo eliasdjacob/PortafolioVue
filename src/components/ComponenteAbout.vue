@@ -1,172 +1,295 @@
-<script setup></script>
-
 <template>
-  <button class="card">
-    <div class="row clearfix">
-      <div class="left big" id="utn">UTN</div>
+  <div class="container">
+    <div class="card" @click="toggleCard">
+      <figure class="front">
+        <img src="http://www.jboeijenga.nl/img/front.jpg" alt="front" />
+        <div class="caption">
+          <h2>
+            elias <span>jacob</span>
+          </h2>
+          <p>web developer</p>
+          <a href="#">View more</a>
+        </div>
+      </figure>
+
+      <figure class="back">
+        <img src="http://www.jboeijenga.nl/img/back.jpg" alt="back" />
+        <div class="caption">
+          <dl>
+            <dt>GITHUB</dt>
+            <dd>eliasdjacob</dd>
+            <dt>Email</dt>
+            <dd>eliasdavidjacob@gmail.com</dd>
+            <dt>Web</dt>
+            <dd>eliasjacob.netlify.com</dd>
+          </dl>
+        </div>
+      </figure>
     </div>
-    <div class="row">
-      <p><span class="big">E</span>lias <span class="big">Jacob</span></p>
-      <p><span class="big">W</span>eb <span class="big">D</span>eveloper</p>
-    </div>
-    <div class="row">
-      <p><span class="med">eliasdavidjacob@gmail.com</span></p>  
-    </div>
-  </button>
+  </div>
 </template>
 
-<style scoped>
-@import url(https://fonts.googleapis.com/css?family=Cormorant+Garamond);
+<script setup>
+import { ref } from "vue";
 
-*,
-*::before,
-*::after {
+const isFlipped = ref(false);
+
+const toggleCard = () => {
+  isFlipped.value = !isFlipped.value;
+};
+</script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,300,800");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,700");
+
+* {
   box-sizing: border-box;
 }
 
-html {
-  font-family: "Cormorant Garamond", serif;
-  text-transform: uppercase;
-  box-sizing: inherit;
-  font-size: 10.5px;
-  letter-spacing: 1px;
-  text-shadow: 0 0 2px rgba(0, 0, 0, .5),
-                -1px -1px 1px rgba(179, 179, 179, .5),
-                1px 1px 0 rgba(255, 255, 255, 0.55),
-                0 1px 3px white;
-  overflow: hidden;
-  color: #191919;
-  background-color: azure;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
-button {
-  display: block;
-  position: relative;
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  text-transform: inherit;
-  letter-spacing: inherit;
-  text-shadow: inherit;
-  cursor: pointer;
-  outline: inherit;
-  z-index: 10;
+body {
+  background: whitesmoke;
+  font-weight: 400;
+  font-size: 1em;
+  font-family: "Raleway", Arial, sans-serif;
 }
 
-p {
-    color: #d5006d; /* Dark pink color */
+.container,
+figure {
+  width: 450px;
+  height: 270px;
 }
 
-#utn {
-    color: #d5006d; /* Dark pink color */
-}
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.big {
-  font-size: 150%;
-}
-
-.med {
-  font-size: 100%;
-  letter-spacing: .5px;
-}
-
-.small {
-  font-size: 65%;
-  letter-spacing: .5px;
-}
-
-.no-space {
-  letter-spacing: 0px;
+.container {
+  position: relative; /* se cambia de absolute a relative */
+  perspective: 1000;
+  margin-top: 20px; 
+  z-index: 1;
 }
 
 .card {
-  background-color: #d5c8ae;
-  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-  height: 200px;
-  width: 350px;
-  margin: 20vh auto 0 auto;
-  padding: 20px 10px 10px 10px;
-  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg);
-  /*transform-origin: 50% 100%;*/
-  box-shadow: 0;
-  transition: transform .4s ease,
-              box-shadow .4s ease;
+  position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
 }
 
-.card:hover {
-  cursor: pointer;
-  transform: rotateX(60deg) rotateY(0deg) rotateZ(45deg) translateZ(10px);
-  box-shadow: 20px 20px 20px rgba(0, 0, 0, .4);
-}
-
-.card:focus {
-  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(10px);
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, .4);
-}
-
-.card:focus::before {
-  transform: skewX(0deg) translateX(0px) translateY(0px);
-  height: 0px;
-}
-
-.card:focus::after {
-  transform: skewY(0deg) translateX(0px) translateY(0px);
-  width: 0px;
-}
-
-.card::before,
-.card::after {
-  content: "";
+figure {
+  background: #2e5d5a;
+  color: #fff;
+  backface-visibility: hidden;
+  overflow: hidden;
   position: absolute;
-  display: block;
-  background-color: rgb(56, 42, 42);
-  transition: transform .4s ease,
-              height .4s ease,
-              width .4s ease;
+  top: 0;
+  left: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.9);
 }
 
-.card::before {
+figure.front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+figure.back,
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  opacity: 0.7;
+}
+
+figure .caption {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 6px;
+  height: 100%;
+  text-transform: uppercase;
+  padding: 2em;
+  backface-visibility: hidden;
+}
+
+.front .caption {
+  font-size: 1.25em;
+}
+
+.front .caption:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(72, 76, 97, 0) 0%, rgba(72, 76, 97, 0.8) 75%);
+  content: "";
+  opacity: 0;
+  transform: translate3d(0, 50%, 0);
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+.front:hover .caption:before {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.front h2 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+  font-size: 1.6em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  color: #272833;
+  transition: transform 0.35s, color 0.35s;
+  transform: translate3d(0, -50%, 0);
+}
+
+.front h2 span {
+  font-weight: bold;
+}
+
+.front h2:after {
+  position: absolute;
+  bottom: -10px;
+  left: 70px;
+  right: 70px;
+  height: 2px;
+  background: #fff;
+  content: "";
+  transition: transform 0.35s;
+  transform: translate3d(-130%, 0, 0);
+}
+
+.front:hover h2 {
+  color: #fff;
+  -webkit-transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
+  transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
+}
+
+.front:hover h2:after {
+  transform: translate3d(0, 0, 0);
+}
+
+.front p {
+  letter-spacing: 1px;
+  font-size: 68.5%;
+  position: absolute;
   bottom: 0;
   left: 0;
-  transform: skewX(45deg) translateX(-3px) translateY(6px);
+  padding: 2em;
+  width: 100%;
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  transition: opacity 0.35s, transform 0.35s;
 }
 
-.card::after {
-  height: 100%;
-  width: 6px;
-  top: 0;
-  right: 0;
-  transform: skewY(45deg) translateX(6px) translateY(-3px);
+.back .caption:before,
+.back .caption:after {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  left: 30px;
+  content: "";
+  opacity: 0;
+  transition: opacity 0.45s, transform 0.45s;
+  transition-delay: 1s;
 }
 
-.row {
-  display: block;
-  text-align: center;
+.back .caption:before {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: scale(0, 1);
 }
 
-.row:nth-child(2) {
-  margin: 35px 0 50px 0;
+.back .caption:after {
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  transform: scale(1, 0);
 }
 
-.left {
+.card.flipped .back .caption:before,
+.card.flipped .back .caption:after {
+  opacity: 0.9;
+  transform: scale(1);
+}
+
+.back dl {
+  font-family: "Lato", Arial, sans-serif;
+  font-weight: 300;
+  bottom: 40px;
+  left: 40px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.35s, transform 0.35s;
+  transition-delay: 0.85s;
+  transform: translate3d(-40px, 0, 0);
+}
+
+.card.flipped .back dl {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+dl dt {
   float: left;
+  width: 60px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  font-weight: 700;
 }
 
-.right {
-  float: right;
+dl dd {
+  margin-left: 80px;
+  text-align: left;
 }
 
-p {
-  margin: 0;
+dl dd:before,
+dl dd:after {
+  display: table;
+  content: " ";
+}
+
+dl dd:after {
+  clear: both;
+}
+
+.front:hover p {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+figure a {
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 450px) {
+  .container {
+    left: 50%;
+    margin-left: -225px;
+  }
 }
 </style>

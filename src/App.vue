@@ -46,6 +46,9 @@ h2, p, li, button {
   border-radius: 5px; /* Bordes rondeados */
 }
 
+#educacion h2 {
+  margin-top: 30px; /* Adjust this value as needed */
+}
 
 section {
   padding: 20px;

@@ -1,9 +1,8 @@
 <script setup>
-
 </script>
 
 <template>
-  <ul>
+  <ul class="navbar">
     <li><a href="#about">Sobre mi</a></li>
     <li><a href="#educacion">Educación</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
@@ -68,6 +67,11 @@ a:hover:after {
 
 a:hover {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar {
+  position: relative;
+  z-index: 100; /* Set a high number to ensure it stays on top */
 }
 
 @media screen and (max-height: 300px) {

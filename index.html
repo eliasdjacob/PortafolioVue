@@ -8,10 +8,19 @@
   </head>
   <body>
     <div id="app"></div>
-    <audio autoplay>
-      <source src="./src/assets/audio/song.mp3" type="audio/mp3">
+    <audio id="myAudio" muted>
+      <source src="/audio/song.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('myAudio');
+        document.addEventListener('click', () => {
+          audio.muted = false;
+          audio.play();
+        }, { once: true });
+      });
+    </script>
   </body>
 </html>

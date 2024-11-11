@@ -6,6 +6,7 @@
     <li><a href="#about">Sobre mi</a></li>
     <li><a href="#educacion">Educación</a></li>
     <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#habilidades">Habilidades</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </template>

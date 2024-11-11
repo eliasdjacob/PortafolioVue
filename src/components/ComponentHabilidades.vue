@@ -70,7 +70,7 @@ const habilidades = ref([
     nombre: "Idiomas",
     habilidades: [
       { id: 1, nombre: "Español", nivel: "Nativo", icono: img19 },
-      { id: 2, nombre: "Inglés", nivel: "Intermedio (B2)", icono: img20 },
+      { id: 2, nombre: "Inglés", nivel: "Avanzado (C2)", icono: img20 },
     ],
   },
 ]);

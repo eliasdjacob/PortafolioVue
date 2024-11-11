@@ -7,7 +7,8 @@
           <h2>
             elias <span>jacob</span>
           </h2>
-          <p>web developer</p>
+          <p>web developer - github: eliasdjacob
+          eliasdavidjacob@gmail.com        </p>
           <a href="#">View more</a>
         </div>
       </figure>
